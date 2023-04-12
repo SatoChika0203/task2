@@ -11,6 +11,21 @@
 <p>Body</p>
 <span><%= book.body %></span>
 
+<span>
+<%= link_to "Show", show_book_path(book.id) %></span>
+<p>Edit</p>
+<p>Destroy</p>
 
 
+<% end %>
+
+<h2>New Book</h2>
+
+<%= form_with model: @book,url: '/books',method: :post do |f| %>  <!--Bookモデルの情報をもとに新しくオブジェクトを作成-->
+ <p>Title</p>
+ <%= f.text_field :title %>
+ <p>Body</p>
+ <%= f.text_area :body %>
+ 
+ <%= f.submit 'Create Book' %>
 <% end %>
