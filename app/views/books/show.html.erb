@@ -2,8 +2,6 @@
 
 <p>Body:<%= @book.body %></p>
 
-<p>Edit</p><p>|</p>
-
-<span>
-<%= link_to "Back", index_book_path %>
-</span>
+<span><%= link_to "Edit", edit_book_path(@book.id) %></span>
+<p>|</p>
+<span><%= link_to "Back", index_book_path %></span>

@@ -11,11 +11,9 @@
 <p>Body</p>
 <span><%= book.body %></span>
 
-<span>
-<%= link_to "Show", show_book_path(book.id) %></span>
-<p>Edit</p>
+<span><%= link_to "Show", show_book_path(book.id) %></span>
+<span><%= link_to "Edit", edit_book_path(book.id) %></span>
 <p>Destroy</p>
-
 
 <% end %>
 
