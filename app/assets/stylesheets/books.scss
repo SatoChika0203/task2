@@ -1,3 +1,10 @@
+.flash{
+  color:green;
+  font-size:12px;
+  margin:30px 60px;
+}
+
+// -------index.html--------
 .index{
   font-size:12px;
   margin-bottom:30px;
@@ -12,14 +19,11 @@
 }
 
 .create-book{
-  text-align: left;
   font-size:12px;
 }
 
-
 .create-box{
   margin:0 0 10px 0;
-  
 }
 
 .create-format{
@@ -38,3 +42,27 @@ textarea{
   margin:0 10px 0 10px;
 }
 
+// -------show.html--------
+.show{
+  font-size:12px;
+}
+
+.show-box{
+  margin:30px 0 10px 40px;
+}
+
+.show-format{
+  padding-bottom:20px;
+  font-weight:bold;
+}
+
+.link-box{
+ margin-left:0px;
+}
+
+.link{
+  margin:0;
+}
+
+
+// -------edit.html--------

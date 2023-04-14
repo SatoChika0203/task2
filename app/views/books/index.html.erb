@@ -1,5 +1,5 @@
 <!--一覧画面-->
-<div><%= flash[:notice] %></div>
+<div class="flash"><%= flash[:notice] %></div>
 
 <div class="index">
 <h1 class="books-title">Books</h1>
@@ -41,7 +41,7 @@
   <div class="create-format">Body</div>
  <%= f.text_area :body %>
  </div>
- 
+
  <%= f.submit 'Create Book' %>
 <% end %>
  </div>
