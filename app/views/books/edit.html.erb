@@ -1,6 +1,6 @@
 <1>Editing Book</1>
 
-<%= form_with model: @book,url:update_book_path(@book.id),method: :patch do |f| %>
+<%= form_with model: @book,url:book_path(@book.id),method: :patch do |f| %>
 <p>title</p>
 <span><%= f.text_field :title %></span>
 
@@ -10,6 +10,6 @@
 <%= f.submit 'Update Book' %>
 <%end%>
 
-<span><%= link_to "Show", show_book_path(@book.id) %></span>
+<span><%= link_to "Show", book_path(@book.id) %></span>
 <p>|</p>
-<span><%= link_to "Back", index_book_path %></span>
+<span><%= link_to "Back", books_path %></span>

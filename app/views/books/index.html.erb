@@ -1,25 +1,32 @@
 <!--一覧画面-->
+<div><%= flash[:notice] %></div>
 
 <h1>Books</h1>
-
-<%= @books.each do |book| %>
+<p>Title</p>
+<p>Body</p>
+<% @books.each do |book| %>
 <!--@books.eachでBookレコードの数だけ繰り返し処理、book変数に格納-->
 
-<p>Title</p>
 <span><%= book.title %></span>
-
-<p>Body</p>
 <span><%= book.body %></span>
 
-<span><%= link_to "Show", show_book_path(book.id) %></span>
+<span><%= link_to "Show", book_path(book.id) %></span>
 <span><%= link_to "Edit", edit_book_path(book.id) %></span>
-<p>Destroy</p>
-
+<span><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm"=>"Are you sure?" %></span>
+<br>
 <% end %>
 
 <h2>New Book</h2>
+<% if @book.errors.any? %>
+<%= @book.errors.count %> errors prohibited this book from being saved:
+ <ul>
+ <% @book.errors.full_messages.each do |message| %>
+ <li><%= message %></li>
+ <%end%>
+ </ul>
+<%end%>
 
-<%= form_with model: @book,url: '/books',method: :post do |f| %>  <!--Bookモデルの情報をもとに新しくオブジェクトを作成-->
+<%= form_with model: @book, url:books_path, method: :post do |f| %>  <!--Bookモデルの情報をもとに新しくオブジェクトを作成-->
  <p>Title</p>
  <%= f.text_field :title %>
  <p>Body</p>
