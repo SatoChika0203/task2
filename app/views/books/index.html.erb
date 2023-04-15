@@ -2,7 +2,7 @@
 <div class="flash"><%= flash[:notice] %></div>
 
 <div class="index">
-<h1 class="books-title">Books</h1>
+<h1 class="title">Books</h1>
 <table>
 <tr>
 <th width="200">Title</th>
@@ -23,8 +23,8 @@
 </table>
 </div>
 
-<div class="create-book">
-<h1 class=newbooks-title>New Book</h1>
+<div>
+<h2 class="sub-title">New Book</h2>
 <% if @book.errors.any? %>
 <%= @book.errors.count %> errors prohibited this book from being saved:
  <ul>
@@ -34,14 +34,14 @@
  </ul>
 <%end%>
 
-<%= form_with model: @book, url:books_path, method: :post do |f| %>  <!--Bookモデルの情報をもとに新しくオブジェクトを作成-->
- <div class="create-box">
-  <div class="create-format">Title</div>
- <%= f.text_field :title %>
-  <div class="create-format">Body</div>
- <%= f.text_area :body %>
- </div>
+ <div class="form">
+  <%= form_with model: @book, url:books_path, method: :post do |f| %>  <!--Bookモデルの情報をもとに新しくオブジェクトを作成-->
+  <div class="form-text">Title</div>
+  <div class="form-box"><%= f.text_field :title %></div>
+  <div class="form-text">Body</div>
+  <div class="form-box"><%= f.text_area :body %></div>
 
  <%= f.submit 'Create Book' %>
 <% end %>
+ </div>
  </div>
